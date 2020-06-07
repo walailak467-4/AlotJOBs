@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/header.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    input {
+        font-family: 'Prompt';
+    }
+
+    .row label {
+        padding: 10px 10px 10px 0;
+        display: inline-block;
+    }
+
+    .h1 {
+        font-weight: bold;
+    }
+
+    #next {
+        background-color: #4CAF50;
+        font-family: 'Prompt';
+        color: white;
+        padding: 12px 20px;
+        width: 130px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        margin-left: 3px;
+    }
+
+    #next:hover {
+        background-color: #45a049;
+    }
+
+    #previous {
+        background-color: rgb(252, 36, 36);
+        font-family: 'Prompt';
+        color: white;
+        padding: 12px 20px;
+        width: 130px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+
+    #previous:hover {
+        background-color: rgb(228, 32, 32);
+    }
+
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 10px solid #ffc000;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+
+        input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+
+    .topic {
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    span {
+        width: 100%;
+        background-color: rgb(216, 213, 213);
+        border-radius: 5px;
+        display: inline-flex;
+    }
+
+    .c {
+
+        margin: 6px 0 6px 0;
+        /* background-color: brown; */
+        margin-left: 10%;
+        margin-right: 0%;
+        display: inline-block;
+    }
+
+    #vehicle1 {
+        zoom: 1.5;
+        vertical-align: middle;
+        margin: auto;
+        margin-left: 5px;
+
+    }
+
+    label[for='vehicle1'] {
+        vertical-align: middle;
+        margin: -5px 5px -5px 5px;
+        color: black;
+        font-family: 'Prompt';
+        font-size: 14px;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <img src="image/home.jpg" alt="home" width="10%" height="10%">
+    </div>
+    <div class="container">
+        <form action="/action_page.php">
+            <div class="topic">ทักษะของคุณ</div>
+            <div class="row">
+                <div class="h1">
+                    <label for="">สามารถเลือกได้มากกว่า 1 ทักษะ</label>
+                </div>
+
+                <div class="w3-row">
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> การขาย / การบริการ</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> เล่นดนตรี / ร้องเพลง</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> พูดนำเสนอในที่สาธารณะ</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ภาษาต่างประเทศ</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> แก้ไขปัญหาเฉพาะหน้าได้</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ขับรถยนต์ / ขี่มอเตอร์ไซต์</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ใช้ Microsoft Office ได้</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> การบริหารการจัดการ</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ชงกาแฟ / เครื่องดื่ม</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ถ่ายภาพนิ่ง / วิดีโอ</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ทำกราฟฟิค / ตัดต่อรูป</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> การเงินและบัญชี</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ทำงานวิจัย</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> พิมพ์สัมพัส</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> วาดรูป</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> เขียนโปรแกรม</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> สันทนาการ</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> การประสานงาน</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ทำอาหาร</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ไอที</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ยกของหนัก</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ลาเต้อาร์ต</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> แพ็คสินค้า</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> สอนหนังสือ</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                                <label for="vehicle1"> ความรู้เรื่องยา / สุขภาพ</label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <button id="next">ขั้นตอนต่อไป</button>
+                    <button id="previous">ย้อนกลับ</button>
+                </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/header.css" />
+
+<style>
+    input {
+        font-family: 'Prompt';
+    }
+
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+
+    }
+
+    ::placeholder {
+        font-family: 'Prompt';
+    }
+
+    label {
+        padding: 10px 10px 10px 0;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    #next {
+        background-color: #4CAF50;
+        font-family: 'Prompt';
+        color: white;
+        padding: 12px 20px;
+        width: 130px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        margin-left: 3px;
+    }
+
+    #next:hover {
+        background-color: #45a049;
+    }
+
+    #previous {
+        background-color: rgb(252, 36, 36);
+        font-family: 'Prompt';
+        color: white;
+        padding: 12px 20px;
+        width: 130px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+
+    #previous:hover {
+        background-color: rgb(228, 32, 32);
+    }
+
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 10px solid #ffc000;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+
+        input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+
+    .topic {
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .row .butt button {
+        width: 200px;
+        padding: 5px;
+        border: 1px solid rgb(216, 213, 213);
+        font-family: 'Prompt';
+        font-weight: bold;
+        border-radius: 4px;
+        background-color: rgb(216, 213, 213);
+        color: rgb(66, 65, 65);
+        margin: 0 auto;
+        display: block;
+    }
+
+    .row .butt button:hover {
+        background-color: #f2f2f2;
+        color: black;
+        border: 1px solid #f2f2f2;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    select:required:invalid {
+        color: gray;
+        font-family: 'Prompt';
+        
+    }
+
+    option[value=""][disabled] {
+        display: none;
+    }
+
+    option {
+        color: black;
+        font-family: 'Prompt';
+    }
+    p {
+        color: gray;
+        font-size:12px;
+        margin-top: 0;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <img src="image/home.jpg" alt="home" width="10%" height="10%">
+    </div>
+    <div class="container">
+        <form action="/action_page.php">
+            <div class="topic">การศึกษา</div>
+            <div class="row">
+                <div>
+                    <label for="">ระดับการศึกษา</label>
+                    <p>(ทั้งที่กำลังศึกษาอยู่และสำเร็จการศึกษาแล้ว)</p>
+                </div>
+                <div>
+                    <select id="level" required>
+                        <option value="" disabled selected>เลือกระดับการศึกษา
+                        <option>ต่ำกว่าประถมศึกษา</option>
+                        <option>ประถมศึกษา</option>
+                        <option>มัธยมศึกษาตอนต้น</option>
+                        <option>มัธยมศึกษาตอนปลาย</option>
+                        <option>ปวช.</option>
+                        <option>ปวส.</option>
+                        <option>อนุปริญญา</option>
+                        <option>ปริญญาตรี</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="">สถานศึกษา</label>
+                </div>
+                <div>
+                    <input type="text" id="" name="" placeholder="มหาวิทยาลัย / สถาบัน / โรงเรียน">
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="">สาขาวิชา</label>
+                </div>
+                <div>
+                    <input type="text" id="" name="" placeholder="คณะ / ภาควิชา / สาขา">
+                </div>
+            </div>
+            <div class="row">
+                <div class="butt">
+                    <br><button>เพิ่มการศึกษา</button>
+                </div>
+            </div>
+            <div class="row">
+                <br>
+                <button id="next">ขั้นตอนต่อไป</button>
+                <button id="previous">ย้อนกลับ</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
