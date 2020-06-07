@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/header.css" />
+
+<style>
+    section {
+        color: black;
+        text-align: center;
+    }
+
+    div {
+        height: 50%;
+    }
+
+    article {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        padding: 40px;
+        border: 10px solid #ffc000;
+        background-color: #ffffff;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-top: 30px;
+        color: #ffc000;
+
+    }
+
+    /* Pattern styles */
+    .container {
+        display: table;
+        width: 100%;
+    }
+
+    .left-half {
+        position: absolute;
+        left: 0px;
+        width: 50%;
+
+    }
+
+    .right-half {
+        position: absolute;
+        right: 1%;
+        width: 50%;
+    }
+</style>
+
+<body>
+    <div class="header">
+        <img src="image/home.jpg" alt="home" width="10%" height="10%">
+    </div>
+    <section class="container">
+        <h1>ยินดีต้อนรับสู่ Alot JOBs</h1>
+        <div class="left-half">
+            <article>
+                <img src="image/find_employer.jpg" alt="find employer" width="30%" height="30%">
+                <h2>หางาน</h1>
+            </article>
+        </div>
+        <div class="right-half">
+            <article>
+                <img src="image/find_work.JPG" alt="find work" width="30%" height="30%">
+                <h2>หาพนักงาน</h1>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>

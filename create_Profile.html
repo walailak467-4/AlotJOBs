@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/header.css" />
+
+<style>
+    input {
+        font-family: 'Prompt';
+        vertical-align:middle;
+    }
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 10px;
+        font-family: 'Prompt';
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    ::placeholder{
+        font-family: 'Prompt';
+    }
+    #birthdate {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+    input[type=file] {
+        width: 100%;
+        padding-top: 10px;
+        border-radius: 4px;
+        resize: vertical;
+    }
+    label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+    }
+
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        font-family: 'Prompt';
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+    p {
+        color: gray;
+        font-size:12px;
+        margin-top: 5px;
+    }
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 10px solid #ffc000;
+    }
+
+    .col-12 {
+        float: left;
+        width: 12%;
+        margin-top: 6px;
+        font-weight: bold;
+        vertical-align:middle;
+    }
+
+    .col-88 {
+        float: left;
+        width: 88%;
+        margin-top: 6px;
+        vertical-align:middle;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+
+        .col-12,
+        .col-88,
+        input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+</style>
+
+<body>
+    <div class="header">
+        <img src="image/home.jpg" alt="home" width="10%" height="10%">
+    </div>
+    <div class="container">
+        <form action="/action_page.php">
+            <div class="row">
+                <div class="col-12">
+                    <label for="img">รูปโปรไฟล์</label>
+                </div>
+                <div class="col-88">
+                    <input type="file" id="imgP" name="img" accept="image/*">
+                    <p><strong>หมายเหตุ:</strong> **ควรใช้รูปที่สุภาพ และเห็นหน้าชัดเจน เพื่อใช้ในการสมัครงาน</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="fname">ชื่อ</label>
+                </div>
+                <div class="col-88">
+                    <input type="text" id="fname" name="firstname">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="lname">นามสกุล</label>
+                </div>
+                <div class="col-88">
+                    <input type="text" id="lname" name="lastname" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="nname">ชื่อเล่น</label>
+                </div>
+                <div class="col-88">
+                    <input type="text" id="nname" name="nickname">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="gender">เพศ</label>
+                </div>
+                <div class="col-88">
+                    <select id="gender" name="gender">
+                        <option value="male">ชาย</option>
+                        <option value="female">หญิง</option>
+                        <option value="other">อื่นๆ</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="birthdate">วันเกิด</label>
+                </div>
+                <div class="col-88">
+                    <input type="date" id="birthdate" name="birthdate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="phone">เบอร์โทรศัพท์</label>
+                </div>
+                <div class="col-88">
+                    <input type="text" id="phone" name="phone">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="email">อีเมล</label>
+                </div>
+                <div class="col-88">
+                    <input type="text" id="email" name="email">
+                </div>
+            </div>
+            <div class="row">
+                <br><input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

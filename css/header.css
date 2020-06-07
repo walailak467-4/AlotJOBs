@@ -1,0 +1,18 @@
+/* Pen-specific styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #3494ba;
+}
+
+.header:after {
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 98%;
+    border: 2px solid #ffc000;
+    border-radius: 4px;
+}

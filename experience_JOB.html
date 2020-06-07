@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/header.css" />
+
+<style>
+    input {
+        font-family: 'Prompt';
+    }
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+
+    }
+    ::placeholder{
+        font-family: 'Prompt';
+    }
+    .row textarea {
+        width: 100%;
+        min-height: 100px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    #birthdate {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    input[type=number] {
+        width: 20%;
+        padding: 10px 0 10px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+    input[type=number]:hover::-webkit-inner-spin-button {
+        width: -จpx;
+        height: 50px;
+    }
+
+    label {
+        padding: 10px 10px 10px 0;
+        display: inline-block;
+        font-weight: bold;
+    }
+
+    #next {
+        background-color: #4CAF50;
+        font-family: 'Prompt';
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+
+    #next:hover {
+        background-color: #45a049;
+    }
+
+    p {
+        color: gray;
+        font-size: 12px;
+        margin-top: -10px;
+        padding-left: 36px;
+    }
+
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 10px solid #ffc000;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+
+        input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+
+    .experience {
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .chkEx label {
+        font-weight: bold;
+        vertical-align: middle;
+    }
+
+    input[type=checkbox] {
+        zoom: 1.5;
+        vertical-align: middle;
+    }
+    .row .butt button{
+        width: 200px;
+        padding: 5px;
+        border: 1px solid rgb(216, 213, 213);
+        font-family: 'Prompt';
+        font-weight: bold;
+        border-radius: 4px;
+        background-color: rgb(216, 213, 213);
+        color: rgb(66, 65, 65);
+        margin: 0 auto;
+        display: block;
+    }
+    .row .butt button:hover {
+        background-color: #f2f2f2;
+        color: black;
+        border: 1px solid #f2f2f2;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+</style>
+
+<body>
+    <div class="header">
+        <img src="image/home.jpg" alt="home" width="10%" height="10%">
+    </div>
+    <div class="container">
+        <form action="/action_page.php">
+            <div class="experience">ประสบการณ์ด้านการทำงาน</div>
+            <div class="chkEx">
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
+                <label for="vehicle1"> มีประสบการณ์ด้านการทำงาน</label><br>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="notEx">
+                <label for="vehicle2"> ไม่มีประสบการณ์ด้านการทำงาน</label><br>
+                <p>(หากคุณไม่มีประสบการณ์ด้านการทำงาน ให้กดเครื่องหมายถูกและกดขั้นตอนถัดไป)</p>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="">ตำแหน่งงาน</label>
+                </div>
+                <div>
+                    <input type="text" id="" name=""  placeholder="ตำแหน่งงาน">
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="">บริษัท / ร้านค้า</label>
+                </div>
+                <div>
+                    <input type="text" id="" name=""  placeholder="สถานที่ทำงาน">
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="">รายละเอียดของงานที่ทำ</label>
+                </div>
+                <div>
+                    <textarea type="text" id="" name="" placeholder="รายละเอียดหน้าที่ที่ได้รับผิดชอบ"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <label for="">ระยะเวลาในการทำงาน</label>
+                </div>
+                <div>
+                    <input type="number" min="1" max="100" placeholder="...ปี">
+                    <label>ปี</label>
+                    <input type="number" min="1" max="100" placeholder="...เดือน">
+                    <label>เดือน</label>
+                    <input type="number" min="1" max="100" placeholder="...วัน">
+                    <label>วัน</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="butt">
+                    <br><button>เพิ่มประสบการณ์ในการทำงาน</button>
+                </div>
+            </div>
+            <div class="row">
+                <br><button id="next">ขั้นตอนต่อไป</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
