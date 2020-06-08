@@ -10,6 +10,15 @@
         font-family: 'Prompt';
         vertical-align:middle;
     }
+    .col-88 input[name="uploadtext"]{
+        width:60%;
+    }
+    .col-88 input[name="uploadbutton"]{
+        padding: 10px;
+        font-family: 'Prompt';
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
     input[type=text],
     select {
         width: 100%;
@@ -105,6 +114,7 @@
         font-weight: bold;
         font-size: 30px;
         text-align: center;
+        font-family: 'Prompt';
     }
 </style>
 
@@ -120,7 +130,12 @@
                     <label for="img">รูปโปรไฟล์</label>
                 </div>
                 <div class="col-88">
-                    <input type="file" id="imgP" name="img" accept="image/*">
+                    <form action="uploadfile.php" method="post" enctype="multipart/form-data" target="ifrm">
+                        <input type="file" name="upload" style="display:none" />
+                        <input type="text" name="uploadtext" onkeydown="upload.value=uploadtext.value "/>
+                        <input type="button" name="uploadbutton" value="เลือกไฟล์" onclick="upload.click()"
+                            onmouseout="uploadtext.value=upload.value" />
+                    </form>
                     <p><strong>หมายเหตุ:</strong> **ควรใช้รูปที่สุภาพ และเห็นหน้าชัดเจน เพื่อใช้ในการสมัครงาน</p>
                 </div>
             </div>

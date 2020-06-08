@@ -24,6 +24,15 @@
         font-family: 'Prompt';
     }
 
+    .row textarea {
+        width: 100%;
+        min-height: 200px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+
     label {
         padding: 10px 10px 10px 0;
         display: inline-block;
@@ -63,6 +72,12 @@
         background-color: rgb(228, 32, 32);
     }
 
+    p {
+        color: gray;
+        font-size: 15px;
+        margin-top: -10px;
+    }
+
     .container {
         border-radius: 5px;
         background-color: #f2f2f2;
@@ -96,6 +111,17 @@
         font-family: 'Prompt';
     }
 
+    .chkEx label,
+    .chkEx {
+        font-weight: bold;
+        vertical-align: middle;
+    }
+
+    input[type=checkbox] {
+        zoom: 1.5;
+        vertical-align: middle;
+    }
+
     .row .butt button {
         width: 200px;
         padding: 5px;
@@ -115,26 +141,6 @@
         border: 1px solid #f2f2f2;
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
-
-    select:required:invalid {
-        color: gray;
-        font-family: 'Prompt';
-        
-    }
-
-    option[value=""][disabled] {
-        display: none;
-    }
-
-    option {
-        color: black;
-        font-family: 'Prompt';
-    }
-    p {
-        color: gray;
-        font-size:12px;
-        margin-top: 0;
-    }
 </style>
 
 <body>
@@ -143,50 +149,18 @@
     </div>
     <div class="container">
         <form action="/action_page.php">
-            <div class="topic">การศึกษา</div>
+            <div class="topic">ข้อมูลเพิ่มเติ่ม</div>
             <div class="row">
                 <div>
-                    <label for="">ระดับการศึกษา</label>
-                    <p>(ทั้งที่กำลังศึกษาอยู่และสำเร็จการศึกษาแล้ว)</p>
-                </div>
-                <div>
-                    <select id="level" required>
-                        <option value="" disabled selected>เลือกระดับการศึกษา
-                        <option>ต่ำกว่าประถมศึกษา</option>
-                        <option>ประถมศึกษา</option>
-                        <option>มัธยมศึกษาตอนต้น</option>
-                        <option>มัธยมศึกษาตอนปลาย</option>
-                        <option>ปวช.</option>
-                        <option>ปวส.</option>
-                        <option>อนุปริญญา</option>
-                        <option>ปริญญาตรี</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div>
-                    <label for="">สถานศึกษา</label>
-                </div>
-                <div>
-                    <input type="text" id="" name="" placeholder="มหาวิทยาลัย / สถาบัน / โรงเรียน">
-                </div>
-            </div>
-            <div class="row">
-                <div>
-                    <label for="">สาขาวิชา</label>
-                </div>
-                <div>
-                    <input type="text" id="" name="" placeholder="คณะ / ภาควิชา / สาขา">
-                </div>
-            </div>
-            <div class="row">
-                <div class="butt">
-                    <br><button>เพิ่มการศึกษา</button>
+                    <br>
+                    <p>คุณสามารถแนะนำตัวเพิ่มเติม แสดงรายละเอียดของงานที่ต้องการ หรือข้อจำกัดในการทำงาน
+                        เพื่อเป็นประโยชน์แก่การหางานให้เหมาะสมกับคุณมากที่สุด ...</p>
+                    <textarea type="text" id="moreINFO" name="moreINFO" placeholder="กรอกข้อมูล ..."></textarea>
                 </div>
             </div>
             <div class="row">
                 <br>
-                <button id="next">ขั้นตอนต่อไป</button>
+                <button id="next">ยืนยันข้อมูล</button>
                 <button id="previous">ย้อนกลับ</button>
             </div>
         </form>
