@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #3494ba;
+}
+
+h1, h5{
+    color: white;
+    text-align: center;
+    margin: 30px;
+}
+
+.yellow-line {
+    background: #ffbf00;
+    height: 30px;
+    width: 100%;
+}
+
+.inside {
+    background-color: white;
+    height: 600px;
+}
+
+.login-button-group {
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-btn {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btn-login {
+    max-width: 100%;
+    height: auto;
+    padding: 10px;
+    text-align: left;
+}
+
+i {
+    padding-left: 10px;
+}
+
+a:link {
+    color: black;
+    font-size: 20px;
+}
+
+.skip {
+    margin: 30px;
+    float: right;
+}
+
+

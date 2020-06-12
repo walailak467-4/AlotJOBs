@@ -1,0 +1,117 @@
+
+    input {
+        font-family: 'Prompt';
+        vertical-align:middle;
+    }
+    .col-88 input[name="uploadtext"]{
+        width:60%;
+    }
+    .col-88 input[name="uploadbutton"]{
+        padding: 10px;
+        font-family: 'Prompt';
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    input[type=text],input[type=tel],input[type=email],
+    select {
+        width: 100%;
+        padding: 10px;
+        font-family: 'Prompt';
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    ::placeholder{
+        font-family: 'Prompt';
+    }
+    #birthdate {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+    }
+    input[type=file] {
+        width: 100%;
+        padding-top: 10px;
+        border-radius: 4px;
+        resize: vertical;
+    }
+    label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+    }
+
+    #next {
+        background-color: #4CAF50;
+        font-family: 'Prompt';
+        color: white;
+        padding: 12px 20px;
+        width: 130px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        margin-left: 3px;
+    }
+
+    #next:hover {
+        background-color: #45a049;
+    }
+    p {
+        color: gray;
+        font-size:12px;
+        margin-top: 5px;
+    }
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 10px solid #ffc000;
+    }
+
+    .col-12 {
+        float: left;
+        width: 12%;
+        margin-top: 6px;
+        font-weight: bold;
+        vertical-align:middle;
+    }
+
+    .col-88 {
+        float: left;
+        width: 88%;
+        margin-top: 6px;
+        vertical-align:middle;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+
+        .col-12,
+        .col-88,
+        input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+    .topic {
+        font-weight: bold;
+        font-size: 30px;
+        text-align: center;
+        font-family: 'Prompt';
+    }
+    #blah{
+        max-height: 100px;
+        margin: 0 auto;
+        display: block;
+    }

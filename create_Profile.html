@@ -1,138 +1,37 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
+<title>Alot JOBs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/header.css" />
+<link rel="stylesheet" type="text/css" href="css/create_Profile.css" />
+<script src="js/save.js"></script>
+<script src="js/verification.js"></script>
 
-<style>
-    input {
-        font-family: 'Prompt';
-        vertical-align:middle;
-    }
-    .col-88 input[name="uploadtext"]{
-        width:60%;
-    }
-    .col-88 input[name="uploadbutton"]{
-        padding: 10px;
-        font-family: 'Prompt';
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-    input[type=text],
-    select {
-        width: 100%;
-        padding: 10px;
-        font-family: 'Prompt';
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-    ::placeholder{
-        font-family: 'Prompt';
-    }
-    #birthdate {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        resize: vertical;
-    }
-    input[type=file] {
-        width: 100%;
-        padding-top: 10px;
-        border-radius: 4px;
-        resize: vertical;
-    }
-    label {
-        padding: 12px 12px 12px 0;
-        display: inline-block;
-    }
 
-    input[type=submit] {
-        background-color: #4CAF50;
-        color: white;
-        font-family: 'Prompt';
-        padding: 12px 20px;
-        width: 130px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        float: right;
-    }
-
-    input[type=submit]:hover {
-        background-color: #45a049;
-    }
-    p {
-        color: gray;
-        font-size:12px;
-        margin-top: 5px;
-    }
-    .container {
-        border-radius: 5px;
-        background-color: #f2f2f2;
-        padding: 20px;
-        margin-top: 20px;
-        margin-left: 10%;
-        margin-right: 10%;
-        border: 10px solid #ffc000;
-    }
-
-    .col-12 {
-        float: left;
-        width: 12%;
-        margin-top: 6px;
-        font-weight: bold;
-        vertical-align:middle;
-    }
-
-    .col-88 {
-        float: left;
-        width: 88%;
-        margin-top: 6px;
-        vertical-align:middle;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-
-        .col-12,
-        .col-88,
-        input[type=submit] {
-            width: 100%;
-            margin-top: 0;
-        }
-    }
-    .topic {
-        font-weight: bold;
-        font-size: 30px;
-        text-align: center;
-        font-family: 'Prompt';
-    }
-</style>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
 
 <body>
     <div class="header">
         <img src="image/home.jpg" alt="home" width="10%" height="10%">
     </div>
     <div class="container">
-        <form action="/action_page.php">
+        <form action="/action_page.php" name="Form">
             <div class="topic">ประวิติส่วนตัว</div>
             <div class="row">
+                <img id="blah" src="http://placehold.it/100" alt="your image" />
                 <div class="col-12">
                     <label for="img">รูปโปรไฟล์</label>
                 </div>
                 <div class="col-88">
                     <form action="uploadfile.php" method="post" enctype="multipart/form-data" target="ifrm">
-                        <input type="file" name="upload" style="display:none" />
-                        <input type="text" name="uploadtext" onkeydown="upload.value=uploadtext.value "/>
+                        <input type="file" name="upload" style="display:none" onchange="readURL(this);" />
+                        <input type="text" id="imgPro" name="uploadtext" onkeydown="upload.value=uploadtext.value " />
                         <input type="button" name="uploadbutton" value="เลือกไฟล์" onclick="upload.click()"
                             onmouseout="uploadtext.value=upload.value" />
                     </form>
@@ -152,7 +51,7 @@
                     <label for="lname">นามสกุล</label>
                 </div>
                 <div class="col-88">
-                    <input type="text" id="lname" name="lastname" >
+                    <input type="text" id="lname" name="lastname">
                 </div>
             </div>
             <div class="row">
@@ -188,7 +87,10 @@
                     <label for="phone">เบอร์โทรศัพท์</label>
                 </div>
                 <div class="col-88">
-                    <input type="text" id="phone" name="phone">
+                    <form>
+                        <input type="tel" id="phone" name="phone">
+                    </form>
+
                 </div>
             </div>
             <div class="row">
@@ -196,14 +98,66 @@
                     <label for="email">อีเมล</label>
                 </div>
                 <div class="col-88">
-                    <input type="text" id="email" name="email">
+                    <input type="email" id="email" name="email">
                 </div>
             </div>
             <div class="row">
-                <br><input type="submit" value="Submit">
+                <br>
+                <!-- <a href="OTP_phone.html"></a> -->
+                <button id="next" onclick="myFriday()">ขั้นตอนต่อไป</button>
             </div>
         </form>
     </div>
+
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function myFriday() {
+            var input = document.getElementById("fname").value;
+
+            var ever = function () {
+                if (input.trim() == '') {
+                    alert("Please input a number");
+                } else if (!(isNaN(input))) {
+                    var result = 1;
+                    for (var i = 1; i <= input; i++) {
+                        result = result * i
+                    }
+                    return result;
+                }
+
+            }
+
+            document.getElementById("fname").value = ever();
+        }
+    </script>
+
+    <script>// Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBXtA2h5hlz600klyOHDW61qcinVIlX5xI",
+            authDomain: "alotjobs-5f2c3.firebaseapp.com",
+            databaseURL: "https://alotjobs-5f2c3.firebaseio.com",
+            projectId: "alotjobs-5f2c3",
+            storageBucket: "alotjobs-5f2c3.appspot.com",
+            messagingSenderId: "980309555700",
+            appId: "1:980309555700:web:0195af85e20f64d0b521a1",
+            measurementId: "G-4MJ7J6DF26"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
 </body>
 
 </html>

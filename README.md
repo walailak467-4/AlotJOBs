@@ -12,7 +12,8 @@
     = เก็บข้อมูลลง firebase, กดปุ่มเพิ่มภาษาแล้วกรอกเพิ่ม, ลิ้งไปหน้าอื่น, ชื่อ id name โค้ด 
 
 # create_Profile.html 
-    = เก็บข้อมูลลง firebase, validate input, ลิ้งไปหน้าอื่น, placeholder, ทำคลิ๊กที่รูปแล้วเปลี่ยนรูปโปร เช่น change src
+    = เก็บข้อมูลลง firebase, 
+    validate input แก้ type เช่น type emial, ลิ้งไปหน้าอื่น, placeholder, ทำคลิ๊กที่รูปแล้วเปลี่ยนรูปโปร เช่น change src
 
 # education_Level.html 
     = เก็บข้อมูลลง firebase, ลิ้งไปหน้าอื่น, กดปุ่มเพิ่มการศึกษาแล้วกรอกเพิ่ม
