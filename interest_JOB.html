@@ -1,5 +1,405 @@
 <!DOCTYPE html>
 <html>
+<title>Alot JOBs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/header.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type="text/css" href="css/interest_JOB.css" />
+<script src="js/saveInterestJOB.js"></script>
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+
+<body>
+    <div class="header">
+        <img src="image/home.jpg" alt="home" width="10%" height="10%">
+    </div>
+    <div class="container">
+        <form action="/action_page.php">
+            <div class="topic">เลือกประเภทงานที่สนใจ</div>
+            <div class="row">
+                <div class="h1">
+                    <hl>สามารถเลือกงานได้หลายประเภท</h1>
+                </div>
+                <div class="w3-row">
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" class="myCheckbox" id="myCheckbox1" value="พริตตี้"/>
+                                <label for="myCheckbox1">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พริตตี้</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" class="myCheckbox" id="myCheckbox2" value="พนักงานเสิร์ฟ"/>
+                                <label for="myCheckbox2">
+                                    <img class="job-pic" src="image/พนักงานเสิร์ฟ.jpg">
+                                </label>
+                                <figcaption>พนักงานเสิร์ฟ</figcaption>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" class="myCheckbox" id="myCheckbox3" value="สตาฟ/งานอีเว้นต์"/>
+                                <label for="myCheckbox3">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>สตาฟ/งานอีเว้นต์</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox4" value="ส่งสินค้า"/>
+                                <label for="myCheckbox4">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>ส่งสินค้า</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox5" value="พนักงานขาย"/>
+                                <label for="myCheckbox5">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พนักงานขาย</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox6" value="ล่ามและนักแปล"/>
+                                <label for="myCheckbox6">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>ล่ามและนักแปล</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox7" value="พนักงานขายของ"/>
+                                <label for="myCheckbox7">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พนักงานขายของ</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox8" value="คอลเซ็นตอร์/สัมภาษณ์"/>
+                                <label for="myCheckbox8">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>คอลเซ็นตอร์/สัมภาษณ์</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox9" value="โปรแกรมเมอร์"/>
+                                <label for="myCheckbox9">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>โปรแกรมเมอร์</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox10" value="บาริสต้า"/>
+                            <label for="myCheckbox10">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>บาริสต้า</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox11" value="ผู้ช่วยทั่วไป"/>
+                                <label for="myCheckbox11">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>ผู้ช่วยทั่วไป</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox12" value="พี่เลี้ยงเด็ก"/>
+                                <label for="myCheckbox12">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พี่เลี้ยงเด็ก</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox13" value="บริการลูกค้า"/>
+                                <label for="myCheckbox13">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>บริการลูกค้า</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox14" value="ไอที"/>
+                                <label for="myCheckbox14">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>ไอที</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox15" value="ผู้ช่วยจัดการร้าน"/>
+                                <label for="myCheckbox15">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>ผู้ช่วยจัดการร้าน</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox16" value="กราฟฟิก"/>
+                                <label for="myCheckbox16">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>กราฟฟิก</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox17" value="พนักงานคีย์ข้อมูล"/>
+                                <label for="myCheckbox17">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พนักงานคีย์ข้อมูล</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox18" value="แคชเชียร์"/>
+                                <label for="myCheckbox18">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>แคชเชียร์</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox19" value="พนักงานภาคสนาม"/>
+                                <label for="myCheckbox19">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พนักงานภาคสนาม</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox20" value="พนักงานบัญชี"/>
+                                <label for="myCheckbox20">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พนักงานบัญชี</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox21" value="ตากล้อง"/>
+                                <label for="myCheckbox21">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>ตากล้อง</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox22" value="ติวเตอร์"/>
+                                <label for="myCheckbox22">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>ติวเตอร์</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox23" value="ทำอาหาร"/>
+                                <label for="myCheckbox23">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>ทำอาหาร</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox24" value="ออกแบบ/วาดรูป"/>
+                                <label for="myCheckbox24">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>ออกแบบ/วาดรูป</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox25" value="พนักงานแพ็คสินค้า"/>
+                                <label for="myCheckbox25">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พนักงานแพ็คสินค้า</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox26" value="แอดมิน/ธุรการ"/>
+                                <label for="myCheckbox26">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>แอดมิน/ธุรการ</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox27" value="พนักงานเช็คสินค้า"/>
+                                <label for="myCheckbox27">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พนักงานเช็คสินค้า</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" class="myCheckbox" id="myCheckbox28" value="พิธีกร"/>
+                                <label for="myCheckbox28">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พิธีกร</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" class="myCheckbox" id="myCheckbox29" value="ผู้ช่วยการตลาด"/>
+                                <label for="myCheckbox29">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>ผู้ช่วยการตลาด</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span><input type="checkbox" class="myCheckbox" id="myCheckbox30" value="พนักงานเดินเอกสาร"/>
+                                <label for="myCheckbox30">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พนักงานเดินเอกสาร</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" class="myCheckbox" id="myCheckbox31" value="พนักงานตรวจสอบข้อมูล"/>
+                                <label for="myCheckbox31">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>พนักงานตรวจสอบข้อมูล</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" class="myCheckbox" id="myCheckbox32" value="ทำความสะอาดและสวน"/>
+                                <label for="myCheckbox32">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>ทำความสะอาดและสวน</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="w3-third w3-container">
+                        <div class="c">
+                            <span>
+                                <input type="checkbox" class="myCheckbox" id="myCheckbox33" value="อื่นๆ"/>
+                                <label for="myCheckbox33">
+                                    <img class="job-pic" src="https://via.placeholder.com/150x150">
+                                    <figcaption>อื่นๆ</figcaption>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <br>
+                    <button id="next" type="button" onclick="saveInterestJOB()">ขั้นตอนต่อไป</button>
+                    <button id="previous">ย้อนกลับ</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>// Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBXtA2h5hlz600klyOHDW61qcinVIlX5xI",
+            authDomain: "alotjobs-5f2c3.firebaseapp.com",
+            databaseURL: "https://alotjobs-5f2c3.firebaseio.com",
+            projectId: "alotjobs-5f2c3",
+            storageBucket: "alotjobs-5f2c3.appspot.com",
+            messagingSenderId: "980309555700",
+            appId: "1:980309555700:web:0195af85e20f64d0b521a1",
+            measurementId: "G-4MJ7J6DF26"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
     <title>Alot JOBs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
@@ -159,4 +559,4 @@
         </div>
     </div>
 </body>
-</html>
+</html> -->

@@ -5,8 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/header.css" />
 <link rel="stylesheet" type="text/css" href="css/create_Profile.css" />
-<script src="js/save.js"></script>
-<script src="js/verification.js"></script>
+<script src="js/saveCreateProfile.js"></script>
 
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
@@ -68,9 +67,9 @@
                 </div>
                 <div class="col-88">
                     <select id="gender" name="gender">
-                        <option value="male">ชาย</option>
-                        <option value="female">หญิง</option>
-                        <option value="other">อื่นๆ</option>
+                        <option value="ชาย">ชาย</option>
+                        <option value="หญิง">หญิง</option>
+                        <option value="อื่นๆ">อื่นๆ</option>
                     </select>
                 </div>
             </div>
@@ -103,8 +102,7 @@
             </div>
             <div class="row">
                 <br>
-                <!-- <a href="OTP_phone.html"></a> -->
-                <button id="next" onclick="myFriday()">ขั้นตอนต่อไป</button>
+                <button  type='button' id="next" onclick="saveCreateProfile()">ขั้นตอนต่อไป</button>
             </div>
         </form>
     </div>
@@ -121,24 +119,6 @@
 
                 reader.readAsDataURL(input.files[0]);
             }
-        }
-        function myFriday() {
-            var input = document.getElementById("fname").value;
-
-            var ever = function () {
-                if (input.trim() == '') {
-                    alert("Please input a number");
-                } else if (!(isNaN(input))) {
-                    var result = 1;
-                    for (var i = 1; i <= input; i++) {
-                        result = result * i
-                    }
-                    return result;
-                }
-
-            }
-
-            document.getElementById("fname").value = ever();
         }
     </script>
 

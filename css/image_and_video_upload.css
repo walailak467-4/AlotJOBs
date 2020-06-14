@@ -1,0 +1,136 @@
+input {
+    font-family: 'Prompt';
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+
+}
+
+input[name="uploadtext"] {
+    width: 60%;
+}
+
+input[name="uploadbutton"] {
+    padding: 10px;
+    font-family: 'Prompt';
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+::placeholder {
+    font-family: 'Prompt';
+}
+
+p {
+    color: gray;
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+label {
+    padding: 10px 10px 10px 0;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#next {
+    background-color: #4CAF50;
+    font-family: 'Prompt';
+    color: white;
+    padding: 12px 20px;
+    width: 130px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-left: 3px;
+}
+
+#next:hover {
+    background-color: #45a049;
+}
+
+#previous {
+    background-color: rgb(252, 36, 36);
+    font-family: 'Prompt';
+    color: white;
+    padding: 12px 20px;
+    width: 130px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+#previous:hover {
+    background-color: rgb(228, 32, 32);
+}
+
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 10px solid #ffc000;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.topic {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Prompt';
+}
+
+.row .butt button {
+    padding: 5px;
+    border: 1px solid rgb(216, 213, 213);
+    font-family: 'Prompt';
+    font-weight: bold;
+    border-radius: 4px;
+    background-color: rgb(216, 213, 213);
+    color: rgb(66, 65, 65);
+    margin: 0 auto;
+    display: block;
+}
+
+.row .butt button:hover {
+    background-color: #f2f2f2;
+    color: black;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#blah{
+    max-height: 100px;
+    max-width: 100px;
+}
+.fileUpButt{
+    border: 0 ;
+    text-decoration: none;
+}
+.fileUpButt:hover{
+    border-color: #e7e7e7;
+}

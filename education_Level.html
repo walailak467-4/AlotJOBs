@@ -4,138 +4,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/header.css" />
+<link rel="stylesheet" type="text/css" href="css/education_Level.css" />
+<script src="js/saveEducationLevel.js"></script>
 
-<style>
-    input {
-        font-family: 'Prompt';
-    }
 
-    input[type=text],
-    select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        resize: vertical;
-
-    }
-
-    ::placeholder {
-        font-family: 'Prompt';
-    }
-
-    label {
-        padding: 10px 10px 10px 0;
-        display: inline-block;
-        font-weight: bold;
-    }
-
-    #next {
-        background-color: #4CAF50;
-        font-family: 'Prompt';
-        color: white;
-        padding: 12px 20px;
-        width: 130px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        float: right;
-        margin-left: 3px;
-    }
-
-    #next:hover {
-        background-color: #45a049;
-    }
-
-    #previous {
-        background-color: rgb(252, 36, 36);
-        font-family: 'Prompt';
-        color: white;
-        padding: 12px 20px;
-        width: 130px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        float: right;
-    }
-
-    #previous:hover {
-        background-color: rgb(228, 32, 32);
-    }
-
-    .container {
-        border-radius: 5px;
-        background-color: #f2f2f2;
-        padding: 20px;
-        margin-top: 20px;
-        margin-left: 10%;
-        margin-right: 10%;
-        border: 10px solid #ffc000;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-
-        input[type=submit] {
-            width: 100%;
-            margin-top: 0;
-        }
-    }
-
-    .topic {
-        font-weight: bold;
-        font-size: 30px;
-        text-align: center;
-        font-family: 'Prompt';
-    }
-
-    .row .butt button {
-        width: 200px;
-        padding: 5px;
-        border: 1px solid rgb(216, 213, 213);
-        font-family: 'Prompt';
-        font-weight: bold;
-        border-radius: 4px;
-        background-color: rgb(216, 213, 213);
-        color: rgb(66, 65, 65);
-        margin: 0 auto;
-        display: block;
-    }
-
-    .row .butt button:hover {
-        background-color: #f2f2f2;
-        color: black;
-        border: 1px solid #f2f2f2;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-
-    select:required:invalid {
-        color: gray;
-        font-family: 'Prompt';
-        
-    }
-
-    option[value=""][disabled] {
-        display: none;
-    }
-
-    option {
-        color: black;
-        font-family: 'Prompt';
-    }
-    p {
-        color: gray;
-        font-size:12px;
-        margin-top: 0;
-    }
-</style>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
 
 <body>
     <div class="header">
@@ -152,36 +29,36 @@
                 <div>
                     <select id="level" required>
                         <option value="" disabled selected>เลือกระดับการศึกษา
-                        <option>ต่ำกว่าประถมศึกษา</option>
-                        <option>ประถมศึกษา</option>
-                        <option>มัธยมศึกษาตอนต้น</option>
-                        <option>มัธยมศึกษาตอนปลาย</option>
-                        <option>ปวช.</option>
-                        <option>ปวส.</option>
-                        <option>อนุปริญญา</option>
-                        <option>ปริญญาตรี</option>
+                        <option value="ต่ำกว่าประถมศึกษา">ต่ำกว่าประถมศึกษา</option>
+                        <option value="ประถมศึกษา">ประถมศึกษา</option>
+                        <option value="มัธยมศึกษาตอนต้น">มัธยมศึกษาตอนต้น</option>
+                        <option value="มัธยมศึกษาตอนปลาย">มัธยมศึกษาตอนปลาย</option>
+                        <option value="ปวช.">ปวช.</option>
+                        <option value="ปวส.">ปวส.</option>
+                        <option value="อนุปริญญา">อนุปริญญา</option>
+                        <option value="ปริญญาตรี">ปริญญาตรี</option>
                     </select>
                 </div>
             </div>
             <div class="row">
                 <div>
-                    <label for="">สถานศึกษา</label>
+                    <label for="placeStudy">สถานศึกษา</label>
                 </div>
                 <div>
-                    <input type="text" id="" name="" placeholder="มหาวิทยาลัย / สถาบัน / โรงเรียน">
+                    <input type="text" id="placeStudy" name="placeStudy" placeholder="มหาวิทยาลัย / สถาบัน / โรงเรียน">
                 </div>
             </div>
             <div class="row">
                 <div>
-                    <label for="">สาขาวิชา</label>
+                    <label for="facultyMajor">สาขาวิชา</label>
                 </div>
                 <div>
-                    <input type="text" id="" name="" placeholder="คณะ / ภาควิชา / สาขา">
+                    <input type="text" id="facultyMajor" name="facultyMajor" placeholder="คณะ / ภาควิชา / สาขา">
                 </div>
             </div>
             <div class="row">
                 <div class="butt">
-                    <br><button>เพิ่มการศึกษา</button>
+                    <br><button type='button' onclick="saveEducationLevel()">เพิ่มการศึกษา</button>
                 </div>
             </div>
             <div class="row">
@@ -191,6 +68,23 @@
             </div>
         </form>
     </div>
+
+    <script>// Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBXtA2h5hlz600klyOHDW61qcinVIlX5xI",
+            authDomain: "alotjobs-5f2c3.firebaseapp.com",
+            databaseURL: "https://alotjobs-5f2c3.firebaseio.com",
+            projectId: "alotjobs-5f2c3",
+            storageBucket: "alotjobs-5f2c3.appspot.com",
+            messagingSenderId: "980309555700",
+            appId: "1:980309555700:web:0195af85e20f64d0b521a1",
+            measurementId: "G-4MJ7J6DF26"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
 </body>
 
 </html>

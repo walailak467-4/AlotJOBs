@@ -1,4 +1,157 @@
-/* Pen-specific styles */
+input {
+    font-family: 'Prompt';
+}
+
+
+
+.h1 {
+    font-weight: bold;
+    font-family: 'Prompt';
+    font-size: 18px;
+    padding: 10px 10px 10px 0;
+    display: inline-block;
+}
+
+#next {
+    background-color: #4CAF50;
+    font-family: 'Prompt';
+    color: white;
+    padding: 12px 20px;
+    width: 130px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+    margin-left: 3px;
+}
+
+#next:hover {
+    background-color: #45a049;
+}
+
+#previous {
+    background-color: rgb(252, 36, 36);
+    font-family: 'Prompt';
+    color: white;
+    padding: 12px 20px;
+    width: 130px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+#previous:hover {
+    background-color: rgb(228, 32, 32);
+}
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 10px solid #ffc000;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+
+    input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.topic {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Prompt';
+}
+
+
+.c {
+    margin: 0;
+    display: block;
+    margin-bottom: 10%;
+}
+.job-pic {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+    width: 150px;
+    border: 5px solid #f2f2f2;
+    /* border-color: #f2f2f2; */
+}
+.job-pic:hover{
+    background-color: #f2f2f2;
+    color: black;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 0 16px 0 rgba(0,0,0,0.2), 0 0 70px 0 rgba(0,0,0,0.19);
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 5%;
+    padding: 2%;
+    font-family: 'Prompt';
+    /* background-color: rgb(216, 213, 213); */
+    border-radius: 5px;
+    font-family: 'Prompt';
+    font-size: 18px;
+    font-weight: 500;
+}
+
+input[type="checkbox"][id^="myCheckbox"] {
+    display: none;
+}
+label {
+    position: relative;
+}
+  
+label:before {
+    background-color: white;
+    color: white;
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid #45a049;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 28px;
+    transition-duration: 0.4s;
+    transform: scale(0);
+}
+
+:checked + label {
+    border-color: #ddd;
+}
+  
+:checked + label:before {
+    content: "✓";
+    background-color: #45a049;
+    transform: scale(1);
+}
+
+
+
+
+/* Pen-specific styles
 * {
     box-sizing: border-box;
 }
@@ -49,4 +202,4 @@ body {
 figcaption {
     text-align: center;
     margin-bottom: 20px;
-}
+} */

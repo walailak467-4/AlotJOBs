@@ -5,118 +5,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/header.css" />
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-    input {
-        font-family: 'Prompt';
-    }
+<link rel="stylesheet" type="text/css" href="css/your_Skill.css" />
+<script src="js/saveYourSkill.js"></script>
 
-    .row label {
-        padding: 10px 10px 10px 0;
-        display: inline-block;
-    }
-
-    .h1 {
-        font-weight: bold;
-    }
-
-    #next {
-        background-color: #4CAF50;
-        font-family: 'Prompt';
-        color: white;
-        padding: 12px 20px;
-        width: 130px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        float: right;
-        margin-left: 3px;
-    }
-
-    #next:hover {
-        background-color: #45a049;
-    }
-
-    #previous {
-        background-color: rgb(252, 36, 36);
-        font-family: 'Prompt';
-        color: white;
-        padding: 12px 20px;
-        width: 130px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        float: right;
-    }
-
-    #previous:hover {
-        background-color: rgb(228, 32, 32);
-    }
-
-    .container {
-        border-radius: 5px;
-        background-color: #f2f2f2;
-        padding: 20px;
-        margin-top: 20px;
-        margin-left: 10%;
-        margin-right: 10%;
-        border: 10px solid #ffc000;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-
-        input[type=submit] {
-            width: 100%;
-            margin-top: 0;
-        }
-    }
-
-    .topic {
-        font-weight: bold;
-        font-size: 30px;
-        text-align: center;
-        font-family: 'Prompt';
-    }
-
-    span {
-        width: 100%;
-        background-color: rgb(216, 213, 213);
-        border-radius: 5px;
-        display: inline-flex;
-    }
-
-    .c {
-
-        margin: 6px 0 6px 0;
-        /* background-color: brown; */
-        margin-left: 10%;
-        margin-right: 0%;
-        display: inline-block;
-    }
-
-    #vehicle1 {
-        zoom: 1.5;
-        vertical-align: middle;
-        margin: auto;
-        margin-left: 5px;
-
-    }
-
-    label[for='vehicle1'] {
-        vertical-align: middle;
-        margin: -5px 5px -5px 5px;
-        color: black;
-        font-family: 'Prompt';
-        font-size: 14px;
-    }
-</style>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
 
 <body>
     <div class="header">
@@ -127,218 +23,235 @@
             <div class="topic">ทักษะของคุณ</div>
             <div class="row">
                 <div class="h1">
-                    <label for="">สามารถเลือกได้มากกว่า 1 ทักษะ</label>
+                    <label>สามารถเลือกได้มากกว่า 1 ทักษะ</label>
                 </div>
 
                 <div class="w3-row">
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> การขาย / การบริการ</label>
+                                <input type="checkbox" class="vehicle" id="vehicle1" name="vehicle" value="การขาย / การบริการ">
+                                <label for="vehicle"> การขาย / การบริการ</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> เล่นดนตรี / ร้องเพลง</label>
+                                <input type="checkbox" class="vehicle" id="vehicle2" name="vehicle" value="เล่นดนตรี / ร้องเพลง">
+                                <label for="vehicle"> เล่นดนตรี / ร้องเพลง</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> พูดนำเสนอในที่สาธารณะ</label>
+                                <input type="checkbox" class="vehicle" id="vehicle3" name="vehicle" value="พูดนำเสนอในที่สาธารณะ">
+                                <label for="vehicle"> พูดนำเสนอในที่สาธารณะ</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ภาษาต่างประเทศ</label>
+                                <input type="checkbox" class="vehicle" id="vehicle4" name="vehicle" value="ภาษาต่างประเทศ">
+                                <label for="vehicle"> ภาษาต่างประเทศ</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> แก้ไขปัญหาเฉพาะหน้าได้</label>
+                                <input type="checkbox" class="vehicle" id="vehicle5" name="vehicle" value="แก้ไขปัญหาเฉพาะหน้าได้">
+                                <label for="vehicle"> แก้ไขปัญหาเฉพาะหน้าได้</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ขับรถยนต์ / ขี่มอเตอร์ไซต์</label>
+                                <input type="checkbox" class="vehicle" id="vehicle6" name="vehicle" value="ขับรถยนต์ / ขี่มอเตอร์ไซต์">
+                                <label for="vehicle"> ขับรถยนต์ / ขี่มอเตอร์ไซต์</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ใช้ Microsoft Office ได้</label>
+                                <input type="checkbox" class="vehicle" id="vehicle7" name="vehicle" value="ใช้ Microsoft Office ได้">
+                                <label for="vehicle"> ใช้ Microsoft Office ได้</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> การบริหารการจัดการ</label>
+                                <input type="checkbox" class="vehicle" id="vehicle8" name="vehicle" value="การบริหารการจัดการ">
+                                <label for="vehicle"> การบริหารการจัดการ</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ชงกาแฟ / เครื่องดื่ม</label>
+                                <input type="checkbox" class="vehicle" id="vehicle9" name="vehicle" value="ชงกาแฟ / เครื่องดื่ม">
+                                <label for="vehicle"> ชงกาแฟ / เครื่องดื่ม</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ถ่ายภาพนิ่ง / วิดีโอ</label>
+                                <input type="checkbox" class="vehicle" id="vehicle10" name="vehicle" value="ถ่ายภาพนิ่ง / วิดีโอ">
+                                <label for="vehicle"> ถ่ายภาพนิ่ง / วิดีโอ</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ทำกราฟฟิค / ตัดต่อรูป</label>
+                                <input type="checkbox" class="vehicle" id="vehicle11" name="vehicle" value="ทำกราฟฟิค / ตัดต่อรูป">
+                                <label for="vehicle"> ทำกราฟฟิค / ตัดต่อรูป</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> การเงินและบัญชี</label>
+                                <input type="checkbox" class="vehicle" id="vehicle12" name="vehicle" value="การเงินและบัญชี">
+                                <label for="vehicle"> การเงินและบัญชี</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ทำงานวิจัย</label>
+                                <input type="checkbox" class="vehicle" id="vehicle13" name="vehicle" value="ทำงานวิจัย">
+                                <label for="vehicle"> ทำงานวิจัย</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> พิมพ์สัมพัส</label>
+                                <input type="checkbox" class="vehicle" id="vehicle14" name="vehicle" value="พิมพ์สัมพัส">
+                                <label for="vehicle"> พิมพ์สัมพัส</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> วาดรูป</label>
+                                <input type="checkbox" class="vehicle" id="vehicle15" name="vehicle" value="วาดรูป">
+                                <label for="vehicle"> วาดรูป</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> เขียนโปรแกรม</label>
+                                <input type="checkbox" class="vehicle" id="vehicle16" name="vehicle" value="เขียนโปรแกรม">
+                                <label for="vehicle"> เขียนโปรแกรม</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> สันทนาการ</label>
+                                <input type="checkbox" class="vehicle" id="vehicle17" name="vehicle" value="สันทนาการ">
+                                <label for="vehicle"> สันทนาการ</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> การประสานงาน</label>
+                                <input type="checkbox" class="vehicle" id="vehicle18" name="vehicle" value="การประสานงาน">
+                                <label for="vehicle"> การประสานงาน</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ทำอาหาร</label>
+                                <input type="checkbox" class="vehicle" id="vehicle19" name="vehicle" value="ทำอาหาร">
+                                <label for="vehicle"> ทำอาหาร</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ไอที</label>
+                                <input type="checkbox" class="vehicle" id="vehicle20" name="vehicle" value="ไอที">
+                                <label for="vehicle"> ไอที</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ยกของหนัก</label>
+                                <input type="checkbox" class="vehicle" id="vehicle21" name="vehicle" value="ยกของหนัก">
+                                <label for="vehicle"> ยกของหนัก</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ลาเต้อาร์ต</label>
+                                <input type="checkbox" class="vehicle" id="vehicle22" name="vehicle" value="ลาเต้อาร์ต">
+                                <label for="vehicle"> ลาเต้อาร์ต</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> แพ็คสินค้า</label>
+                                <input type="checkbox" class="vehicle" id="vehicle23" name="vehicle" value="แพ็คสินค้า">
+                                <label for="vehicle"> แพ็คสินค้า</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> สอนหนังสือ</label>
+                                <input type="checkbox" class="vehicle" id="vehicle24" name="vehicle" value="สอนหนังสือ">
+                                <label for="vehicle"> สอนหนังสือ</label>
                             </span>
                         </div>
                     </div>
                     <div class="w3-third w3-container">
                         <div class="c">
                             <span>
-                                <input type="checkbox" id="vehicle1" name="vehicle1" value="้haveEx">
-                                <label for="vehicle1"> ความรู้เรื่องยา / สุขภาพ</label>
+                                <input type="checkbox" class="vehicle" id="vehicle25" name="vehicle" value="ความรู้เรื่องยา / สุขภาพ">
+                                <label for="vehicle"> ความรู้เรื่องยา / สุขภาพ</label>
                             </span>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <br>
-                    <button id="next">ขั้นตอนต่อไป</button>
+                    <button id="next" type="button" onclick="saveYourSkill()">ขั้นตอนต่อไป</button>
                     <button id="previous">ย้อนกลับ</button>
                 </div>
         </form>
     </div>
+
+    <script>// Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBXtA2h5hlz600klyOHDW61qcinVIlX5xI",
+            authDomain: "alotjobs-5f2c3.firebaseapp.com",
+            databaseURL: "https://alotjobs-5f2c3.firebaseio.com",
+            projectId: "alotjobs-5f2c3",
+            storageBucket: "alotjobs-5f2c3.appspot.com",
+            messagingSenderId: "980309555700",
+            appId: "1:980309555700:web:0195af85e20f64d0b521a1",
+            measurementId: "G-4MJ7J6DF26"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
 </body>
 
 </html>

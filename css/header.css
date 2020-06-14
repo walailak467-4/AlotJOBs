@@ -3,10 +3,11 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Prompt', sans-serif;
+body ,html{
+    font-family: 'Prompt';
     background-color: #3494ba;
 }
+
 
 .header:after {
     content: ' ';

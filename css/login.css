@@ -3,63 +3,180 @@
 }
 
 body {
-    font-family: 'Prompt', sans-serif;
-    background-color: #3494ba;
+    font-family: 'Prompt';
+    margin: 0;
+}
+.header-part{
+    background-color: #3493ba;
+    border-bottom: 20px solid #ffc000;
 }
 
-h1, h5{
+.header-part img{
+    margin-left: 42%;
+    margin-right: 42%;
+    display: block;
+}
+
+.header-part p{
+    font-size: 120%;
     color: white;
     text-align: center;
-    margin: 30px;
+    vertical-align: middle;
+    margin-top: 0;
 }
-
-.yellow-line {
-    background: #ffbf00;
-    height: 30px;
-    width: 100%;
-}
-
-.inside {
+.dot {
+    height: 20px;
+    width: 20px;
+    margin-right: 1.5%;
     background-color: white;
-    height: 600px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
 }
-
-.login-button-group {
-    align-items: center;
-    padding: 50px;
-    background-color: white;
-    width: 100%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.login-btn {
-    position: relative;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#btn-login {
-    max-width: 100%;
-    height: auto;
-    padding: 10px;
-    text-align: left;
-}
-
-i {
-    padding-left: 10px;
-}
-
 a:link {
     color: black;
-    font-size: 20px;
 }
 
 .skip {
-    margin: 30px;
+
     float: right;
+    color: black;
+}
+/* sign in FORM */
+#logreg-forms{
+    width:412px;
+    margin:10vh auto;
+    background-color:#f3f3f3;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+#logreg-forms form {
+    width: 100%;
+    max-width: 410px;
+    padding: 15px;
+    margin: auto;
+}
+#logreg-forms .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+#logreg-forms .form-control:focus { z-index: 2; }
+#logreg-forms .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#logreg-forms .form-signin input[type="password"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#logreg-forms .social-login{
+    width:390px;
+    margin:0 auto;
+    margin-bottom: 14px;
+}
+#logreg-forms .social-btn{
+    font-weight: 100;
+    color:white;
+    width:380px;
+    font-size: 0.9rem;
+}
+
+#logreg-forms a{
+    display: block;
+    padding-top:10px;
+    color:lightseagreen;
+}
+
+#logreg-form .lines{
+    width:200px;
+    border:1px solid red;
 }
 
 
+#logreg-forms button[type="submit"]{ margin-top:10px; }
+
+#logreg-forms .facebook-btn{  background-color:#3C589C; }
+
+#logreg-forms .google-btn{ background-color: #DF4B3B; }
+
+#logreg-forms .form-reset, #logreg-forms .form-signup{ display: none; }
+
+#logreg-forms .form-signup .social-btn{ width:210px; }
+
+#logreg-forms .form-signup input { margin-bottom: 2px;}
+
+.form-signup .social-login{
+    width:210px !important;
+    margin: 0 auto;
+}
+
+/* Mobile */
+
+@media screen and (max-width:500px){
+    #logreg-forms{
+        width:300px;
+    }
+    
+    #logreg-forms  .social-login{
+        width:200px;
+        margin:0 auto;
+        margin-bottom: 10px;
+    }
+    #logreg-forms  .social-btn{
+        font-size: 1.3rem;
+        font-weight: 100;
+        color:white;
+        width:200px;
+        height: 56px;
+        
+    }
+    #logreg-forms .social-btn:nth-child(1){
+        margin-bottom: 5px;
+    }
+    #logreg-forms .social-btn span{
+        display: none;
+    }
+    #logreg-forms  .facebook-btn:after{
+        content:'Facebook';
+    }
+  
+    #logreg-forms  .google-btn:after{
+        content:'Google+';
+    }
+    .header-part{
+        background-color: #3493ba;
+        border-bottom: 10px solid #ffc000;
+    }
+    
+    .header-part img{
+        margin-left: 35%;
+        margin-right: 35%;
+        display: block;
+    }
+    img{
+        height: 30%;
+        width: 30%;
+    }
+    .header-part p{
+        font-size: 90%;
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 0;
+        font-family: 'Prompt';
+    }
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin-right: 1.5%;
+        background-color: white;
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}

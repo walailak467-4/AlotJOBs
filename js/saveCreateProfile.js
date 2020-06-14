@@ -1,4 +1,4 @@
-function saveOnClick(){
+function saveCreateProfile(){
     var imgPro = document.getElementById("imgPro");
     var fname = document.getElementById("fname");
     var lname = document.getElementById("lname");
@@ -22,14 +22,14 @@ function showData(){
 function insertData(imgPro,fname,lname,nname,gender,birthdate,phone,email){
     var firebaseRef = firebase.database().ref("User");
     firebaseRef.push({
-        imgPro:imgPro,
-        fname:fname,
-        lname:lname,
-        nname:nname,
-        gender:gender,
-        birthdate:birthdate,
-        phone:phone,
-        email:email
+        รูปโปรไฟล์:imgPro,
+        ชื่อ:fname,
+        นามสกุล:lname,
+        ชื่อเล่น:nname,
+        เพศ:gender,
+        วันเกิด:birthdate,
+        เบอร์โทรศัพท์:phone,
+        อีเมล:email
     });
     console.log("Insert Success");
 

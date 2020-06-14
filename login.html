@@ -1,49 +1,103 @@
 <!DOCTYPE html>
 <html>
-    <title>Alot JOBs</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://kit.fontawesome.com/c78121cbbe.js" crossorigin="anonymous"></script>
+<title>Alot JOBs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
 <link rel="stylesheet" type="text/css" href="css/login.css" />
+<script src="js/login.js"></script>
+<script src="js/handleSignUp.js"></script>
+
+
+
 <body>
     <div class="header-part">
-        <h1>Alot JOBs</h1>
-        <h5>แหล่งรวมงาน part-time และ ลูกจ้างมากมาย</h5>
+        <img src="image/home.jpg" alt="home" width="16%" height="16%">
+        <P><span class="dot"></span>แหล่งรวมงาน part-time และ ลูกจ้างมากมาย</P>
     </div>
-    <div class="yellow-line">
+    <div id="logreg-forms">
+        <form class="form-signin">
+            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+            <div class="social-login">
+                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign
+                        in with Facebook</span> </button>
+            </div>
+            <p style="text-align:center"> OR </p>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Username or Email address" required=""
+                autofocus="">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+
+            <button class="btn btn-success btn-block" type="submit" id="quickstart-sign-in" onclick="toggleSignIn()"><i
+                    class="fas fa-sign-in-alt"></i> Sign in</button>
+            <a href="#" id="forgot_pswd">Forgot password?</a>
+            <hr>
+            <!-- <p>Don't have an account!</p>  -->
+            <button class="btn btn-primary btn-block" type="submit" id="btn-signup"><i class="fas fa-user-plus"></i>
+                Sign up New Account</button>
+            <a class="skip" href="index.html">กดข้าม >></a>
+        </form>
+
+        <form class="form-reset">
+            <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required=""
+                autofocus="">
+            <button class="btn btn-primary btn-block" type="submit" onclick="resetPassword()">Reset
+                Password</button>
+            <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+        </form>
+
+        <form class="form-signup">
+            <div class="social-login">
+                <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign
+                        up with Facebook</span> </button>
+            </div>
+            <p style="text-align:center">OR</p>
+
+            <!-- <input type="text" id="user-name" class="form-control" placeholder="Username" required="" autofocus=""> -->
+            <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
+            <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
+
+            <button class="btn btn-primary btn-block" type="button" onclick="handleSignUp()"><i
+                    class="fas fa-user-plus"></i> Sign Up</button>
+            <button class="btn btn-success btn-block" type="submit" id="quickstart-verify-email"
+                onclick="sendEmail()">Send Email Verification</button>
+            <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
+        </form>
+        <br>
     </div>
-    <div class="inside">
-        <div class="login-button-group">
-            <div class="login-btn">
-                <button type="button" class="btn btn-primary btn-lg" id="btn-login">
-                    <i class="fab fa-facebook-square fa-lg"></i>
-                        ลงชื่อเข้าใช้ด้วย facebook
-                </button>
-            </div>
-            <div class="login-btn">
-                <button type="button" class="btn btn-success btn-lg" id="btn-login">
-                    <i class="fab fa-line fa-lg"></i>
-                         ลงชื่อเข้าใช้ด้วย LINE</button>
-            </div>
-            <div class="login-btn">
-                <button type="button" class="btn btn-warning btn-lg" id="btn-login">
-                    <i class="fab fa-google fa-lg"></i>
-                         ลงชื่อเข้าใช้ด้วย Google
-                </button>
-            </div>
-            <div class="login-btn">
-                <button type="button" class="btn btn-secondary btn-lg" id="btn-login">
-                    <i class="far fa-envelope fa-lg"></i>
-                         ลงชื่อเข้าใช้ด้วย E-mail
-                    </button>
-            </div>
-        </div>
-        <a class="skip" href="#">กดข้าม >></a>
+
+    <div class="quickstart-user-details-container">
+        Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+        <div>Firebase auth <code>currentUser</code> object value:</div>
+        <pre><code id="quickstart-account-details">null</code></pre>
     </div>
+    <script>// Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBXtA2h5hlz600klyOHDW61qcinVIlX5xI",
+            authDomain: "alotjobs-5f2c3.firebaseapp.com",
+            databaseURL: "https://alotjobs-5f2c3.firebaseio.com",
+            projectId: "alotjobs-5f2c3",
+            storageBucket: "alotjobs-5f2c3.appspot.com",
+            messagingSenderId: "980309555700",
+            appId: "1:980309555700:web:0195af85e20f64d0b521a1",
+            measurementId: "G-4MJ7J6DF26"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
 </body>
+
 </html>
