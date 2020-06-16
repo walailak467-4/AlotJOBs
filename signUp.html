@@ -3,7 +3,6 @@
 <title>Alot JOBs</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
@@ -20,6 +19,8 @@
 <link rel="stylesheet" type="text/css" href="css/login.css" />
 
 
+
+
 <body>
     <div class="header-part">
         <img src="image/home.jpg" alt="home" width="16%" height="16%">
@@ -27,23 +28,20 @@
     </div>
 
     <div>
-        <form class="blockLogin" action="/test.html" method="post">
+        <form class="blockLogin">
             <div class="container">
-                <p class="hint-text">Sign in with your social media account</p>
-                <button type="submit" class="facebookButt"><i class="fab fa-facebook-f"></i>Facebook</button>
-                <div class="or-seperator"><b>or</b></div>
+                <p class="hint-text">Fill in this form to create your account!</p>
+
                 <input type="email" id="email" placeholder="Email Address" name="uname" required>
                 <input type="password" id="password" placeholder="Password" name="psw" required>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password" name="conpsw" required>
 
-                <p class="forgetPass"><a href="resetPassword.html">Forgot password?</a></p>
-                <button type="submit" class="submitButt" id="toggleSignIn">Login</button>
-                <p class="hint-text">Still don't have account ? <a href="signUp.html">Sign up</a> here.</p>
+                <button type="submit" class="submitButt" id="handleSignUp">Sign Up</button>
+                
+                <p class="hint-text">Already Register ? <a href="login.html">Login</a> here.</p>
             </div>
         </form>
     </div>
-
 </body>
-
-<script src="js/toggleSignIn.js"></script>
-
+<script src="js/handleSignUp.js"></script>
 </html>

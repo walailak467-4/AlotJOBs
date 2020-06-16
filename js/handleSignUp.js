@@ -1,137 +1,59 @@
-function handleSignUp() {
-    var email = document.getElementById("user-email").value;
-    var password = document.getElementById("user-pass").value;
+var firebaseConfig = {
+    apiKey: "AIzaSyBXtA2h5hlz600klyOHDW61qcinVIlX5xI",
+    authDomain: "alotjobs-5f2c3.firebaseapp.com",
+    databaseURL: "https://alotjobs-5f2c3.firebaseio.com",
+    projectId: "alotjobs-5f2c3",
+    storageBucket: "alotjobs-5f2c3.appspot.com",
+    messagingSenderId: "980309555700",
+    appId: "1:980309555700:web:0195af85e20f64d0b521a1",
+    measurementId: "G-4MJ7J6DF26"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
 
-    // if (email == "" || password == "") {
-    //     console.log("Please Enter")
-    // } else {
-    //     window.location.href = "SendEmailVerification.html";
-    // }
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode == 'auth/weak-password') {
-            alert('The password is too weak.');
-        } else {
-            alert(errorMessage);
-        }
-        console.log(error);
-        // [END_EXCLUDE]
-    });
-}
-window.onload = function () {
-    initApp();
-}
-function toggleSignIn() {
-    if (firebase.auth().currentUser) {
-        // [START signout]
-        firebase.auth().signOut();
-        // [END signout]
-    } else {
-        var email = document.getElementById('user-email').value;
-        var password = document.getElementById('user-pass').value;
 
-        // Sign in with email and pass.
-        // [START authwithemail]
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // [START_EXCLUDE]
-            if (errorCode === 'auth/wrong-password') {
-                alert('Wrong password.');
-            } else {
-                alert(errorMessage);
-            }
-            console.log(error);
-            document.getElementById('quickstart-sign-in').disabled = false;
-            // [END_EXCLUDE]
-        });
-        // [END authwithemail]
-    }
-    document.getElementById('quickstart-sign-in').disabled = true;
-}
-function initApp() {
-    // Listening for auth state changes.
-    // [START authstatelistener]
-    firebase.auth().onAuthStateChanged(function (user) {
-        // [START_EXCLUDE silent]
-        document.getElementById('quickstart-verify-email').disabled = true;
-        // [END_EXCLUDE]
-        if (user) {
-            // User is signed in.
-            var displayName = user.displayName;
-            var email = user.email;
-            var emailVerified = user.emailVerified;
-            var photoURL = user.photoURL;
-            var isAnonymous = user.isAnonymous;
-            var uid = user.uid;
-            var providerData = user.providerData;
-            // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-            document.getElementById('quickstart-sign-in').textContent = 'Sign out';
-            document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
-            if (!emailVerified) {
-                document.getElementById('quickstart-verify-email').disabled = false;
-            }
-            // [END_EXCLUDE]
-        } else {
-            // User is signed out.
-            // [START_EXCLUDE]
-            document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-            document.getElementById('quickstart-sign-in').textContent = 'Sign in';
-            document.getElementById('quickstart-account-details').textContent = 'null';
-            // [END_EXCLUDE]
-        }
-        // [START_EXCLUDE silent]
-        document.getElementById('quickstart-sign-in').disabled = false;
-        // [END_EXCLUDE]
-    });
-    // [END authstatelistener]
-
-    // document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
-    // document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
-    // document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
-    // document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
-}
 
 /**
-   * Sends an email verification to the user.
-   */
-function sendEmail() {
-    // [START sendemailverification]
-    firebase.auth().currentUser.sendEmailVerification().then(function () {
-        // Email Verification sent!
-        // [START_EXCLUDE]
-        alert('Email Verification Sent!');
-        // [END_EXCLUDE]
-    });
-    // [END sendemailverification]
-}
+ * Handles the sign up button press.
+ */
+var handleSignUp = document.getElementById("handleSignUp");
 
-function resetPassword() {
-    var email = document.getElementById("user-email").value;
-      // [START sendpasswordemail]
-      firebase.auth().sendPasswordResetEmail(email).then(function() {
-        // Password Reset Email Sent!
-        // [START_EXCLUDE]
-        alert('Password Reset Email Sent!');
-        // [END_EXCLUDE]
-      }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // [START_EXCLUDE]
-        if (errorCode == 'auth/invalid-email') {
-          alert(errorMessage);
-        } else if (errorCode == 'auth/user-not-found') {
-          alert(errorMessage);
-        }
-        console.log(error);
-        // [END_EXCLUDE]
-      });
-      // [END sendpasswordemail];
+handleSignUp.addEventListener("click", function (event) {
+    event.preventDefault();
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (password === confirmPassword) {
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then(function () {
+                // [START sendemailverification]
+                firebase.auth().currentUser.sendEmailVerification().then(function () {
+                    // Email Verification sent!
+                    // [START_EXCLUDE]
+                    alert('Email Verification Sent!');
+                    // [END_EXCLUDE]
+                });
+                // [END sendemailverification]
+
+                alert("congrates Sign Up successfully!!")
+                window.location = "login.html"
+            })
+            .catch(function (error) {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // [START_EXCLUDE]
+                if (errorCode == 'auth/weak-password') {
+                    alert('The password is too weak.');
+                } else {
+                    alert(errorMessage);
+                }
+                console.log(error);
+                // [END_EXCLUDE]
+            });
     }
+    console.log(email)
+    console.log(password)
+})
