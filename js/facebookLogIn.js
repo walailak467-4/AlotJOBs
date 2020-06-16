@@ -33,7 +33,7 @@ facebookLogIn.addEventListener("click", function (event) {
         alert('SUCCESS!!')
         console.log('token is ' + token)
         console.log('user is ' + user)
-        window.location.href = "test.html"
+        window.location.href = "index.html"
         // var logout = window.location.href = "index.html"
         // var logout_textchenge = logout.document.getElementById("login-nav")
         // logout_textchenge.querySelector('a').textContent = 'LOG OUT'
