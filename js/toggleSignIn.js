@@ -37,7 +37,7 @@ toggleSignIn.addEventListener("click", function (event) {
                         alert("Please verify your email!!")
                     } else {
                         alert("congrates Login successfully!!");
-                        // window.location = "index.html";
+                        window.location = "index.html";
                         document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
                         document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
                     }
