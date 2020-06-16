@@ -1,16 +1,16 @@
-var firebaseConfig = {
-    apiKey: "AIzaSyBXtA2h5hlz600klyOHDW61qcinVIlX5xI",
-    authDomain: "alotjobs-5f2c3.firebaseapp.com",
-    databaseURL: "https://alotjobs-5f2c3.firebaseio.com",
-    projectId: "alotjobs-5f2c3",
-    storageBucket: "alotjobs-5f2c3.appspot.com",
-    messagingSenderId: "980309555700",
-    appId: "1:980309555700:web:0195af85e20f64d0b521a1",
-    measurementId: "G-4MJ7J6DF26"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+// var firebaseConfig = {
+//     apiKey: "AIzaSyBXtA2h5hlz600klyOHDW61qcinVIlX5xI",
+//     authDomain: "alotjobs-5f2c3.firebaseapp.com",
+//     databaseURL: "https://alotjobs-5f2c3.firebaseio.com",
+//     projectId: "alotjobs-5f2c3",
+//     storageBucket: "alotjobs-5f2c3.appspot.com",
+//     messagingSenderId: "980309555700",
+//     appId: "1:980309555700:web:0195af85e20f64d0b521a1",
+//     measurementId: "G-4MJ7J6DF26"
+// };
+// // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+// firebase.analytics();
 
 
 var toggleSignIn = document.getElementById("toggleSignIn");
@@ -37,21 +37,24 @@ toggleSignIn.addEventListener("click", function (event) {
                         alert("Please verify your email!!")
                     } else {
                         alert("congrates Login successfully!!");
-                        window.location = "test.html";
+                        // window.location = "test.html";
+                        document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+                        document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
                     }
                 }
             })
-                .catch(function (error) {
-                    var errorCode = error.code;
-                    var errorMessage = error.message;
-                    // [START_EXCLUDE]
-                    if (errorCode == 'auth/weak-password') {
-                        alert('The password is too weak.');
-                    } else {
-                        alert(errorMessage);
-                    }
-                    console.log(error);
-                    // [END_EXCLUDE]
-                });
         })
-    })
+        .catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // [START_EXCLUDE]
+            if (errorCode == 'auth/weak-password') {
+                alert('The password is too weak.');
+            } else {
+                alert(errorMessage);
+            }
+            console.log(error);
+            // [END_EXCLUDE]
+        });
+})
+

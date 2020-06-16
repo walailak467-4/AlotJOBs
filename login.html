@@ -9,6 +9,7 @@
 <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase.js"></script>
 <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
 <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-auth.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -21,6 +22,7 @@
 
 
 <body>
+
     <div class="header-part">
         <img src="image/home.jpg" alt="home" width="16%" height="16%">
         <P><span class="dot"></span>แหล่งรวมงาน part-time และ ลูกจ้างมากมาย</P>
@@ -30,7 +32,8 @@
         <form class="blockLogin" action="/test.html" method="post">
             <div class="container">
                 <p class="hint-text">Sign in with your social media account</p>
-                <button type="submit" class="facebookButt"><i class="fab fa-facebook-f"></i>Facebook</button>
+                <button type="submit" id="facebookLogIn" class="facebookButt"><i
+                        class="fab fa-facebook-f"></i>Facebook</button>
                 <div class="or-seperator"><b>or</b></div>
                 <input type="email" id="email" placeholder="Email Address" name="uname" required>
                 <input type="password" id="password" placeholder="Password" name="psw" required>
@@ -41,9 +44,30 @@
             </div>
         </form>
     </div>
-
+    <div class="quickstart-user-details-container">
+        Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+        <div>Firebase auth <code>currentUser</code> object value:</div>
+        <pre><code id="quickstart-account-details">null</code></pre>
+    </div>
+   
 </body>
 
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyBXtA2h5hlz600klyOHDW61qcinVIlX5xI",
+        authDomain: "alotjobs-5f2c3.firebaseapp.com",
+        databaseURL: "https://alotjobs-5f2c3.firebaseio.com",
+        projectId: "alotjobs-5f2c3",
+        storageBucket: "alotjobs-5f2c3.appspot.com",
+        messagingSenderId: "980309555700",
+        appId: "1:980309555700:web:0195af85e20f64d0b521a1",
+        measurementId: "G-4MJ7J6DF26"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+<script src="js/facebookLogIn.js"></script>
 <script src="js/toggleSignIn.js"></script>
 
 </html>
